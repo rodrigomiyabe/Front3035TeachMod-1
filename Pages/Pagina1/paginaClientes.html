@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Lista de Clientes</title>
 </head>
+
 <body>
     <header class="header">
         <a href="../PaginaHome/home.html" class="logo-link">
@@ -14,23 +16,14 @@
         <h1>Lista de Clientes Cadastrados</h1>
     </header>
 
-    <div class="client-list">
-        <div class="client-card" onclick="openModal(1)">
-           
-        </div>
-    </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content" id="modalContent">
-            <span class="close" onclick="closeModal()">&times;</span>
-              
-        </div>
-    </div>
+    <div id="clientListContainer"></div>
+    <div id = "modal"></div>
 
     <footer class="footer">
         <img src="../images/github.png" alt="Logo" class="footer-logo">
         <p>&copy; 2023 Todos os direitos reservados.</p>
     </footer>
-    <script src="logica.js"></script>
 </body>
+<script src="logica.js"></script>
+
 </html>

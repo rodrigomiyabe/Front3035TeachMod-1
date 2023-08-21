@@ -30,8 +30,8 @@ function SlideShow(n) {
 document.addEventListener("DOMContentLoaded", function() {
   const salvarButton = document.getElementById('salvarDados');
 
-  salvarButton.addEventListener('click', function() {
-
+  salvarButton.addEventListener('click', function(event) {
+    event.preventDefault();
     const nome = document.getElementById("nome").value;
     const telefone = document.getElementById("telefone").value;
     const endereco = document.getElementById("endereco").value;
@@ -42,22 +42,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const dadosCliente = {
       tutor: {
-          nome: nome,
-          telefone: telefone,
-          endereco: endereco,
-          dataAtendimento: data
+          nome,
+          telefone,
+          endereco,
+          dataAtendimento:data
       },
       animal: {
-          nome: nomePet,
-          idade: idade,
-          porte: porte
+          nomePet,
+          idade,
+          porte
       }
   };
-
+ 
     // Verifica se o Local Storage está disponível
     if (typeof(Storage) !== "undefined") {
+      if(localStorage.getItem("dadosCliente")) {
+        let currentArray = JSON.parse(localStorage.getItem("dadosCliente"))
+        currentArray.push(dadosCliente)
+        localStorage.setItem("dadosCliente", JSON.stringify(currentArray))
+      } else {
+        localStorage.setItem("dadosCliente", JSON.stringify([dadosCliente]));
+      }
       // Salva os dados no Local Storage
-      localStorage.setItem("dadosCliente", JSON.stringify(dadosCliente));
       alert('Dados salvos no Local Storage!');
     } else {
       console.log("O Local Storage não está disponível no navegador.");

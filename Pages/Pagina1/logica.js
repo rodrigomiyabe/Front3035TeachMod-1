@@ -1,85 +1,74 @@
+function createClientCard(item) {
+  const clientCard = document.createElement('div');
+  clientCard.className = 'client-card';
 
-// const clientList = document.querySelector('.client-list');
+  console.log(item);
 
-// for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     const dadosArmazenados = localStorage.getItem(key);
-//     const dadosCliente = JSON.parse(dadosArmazenados);
+  const h1 = document.createElement('h1');
+  h1.textContent = item.animal.nomePet;
+  const data = new Date(item.tutor.dataAtendimento);
+  const p = document.createElement('p');
+  p.textContent = `Data de atendimento: ${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`
 
-//     const clientCard = document.createElement('div');
-//     clientCard.className = 'client-card';
-//     clientCard.onclick = function() {
-//         openModal(dadosCliente); // Passar os dados do cliente para a função
-//     };
+  clientCard.appendChild(h1);
+  clientCard.appendChild(p);
 
-//     const clientName = dadosCliente.tutor.nome;
-//     const animalName = dadosCliente.animal.nome;
-//     const atendimentoDate = dadosCliente.tutor.dataAtendimento;
+  clientCard.addEventListener('click', (item) => {
+    console.log('to aqui')
+  
+    const modal = document.createElement('div');
+    modal.className = 'modal';
 
-//     clientCard.innerHTML = `
-//         <h2>Cliente: ${clientName}</h2>
-//         <p>Animal: ${animalName}</p>
-//         <p>Data do Atendimento: ${atendimentoDate}</p>
-//     `;
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    
+    const h1 = document.createElement('h1');
+    h1.textContent = 'teste';
+   
+    const p = document.createElement('p');
+    p.textContent = `Data de atendimento: `
+  
+     const closeButton = document.createElement('span');
+    closeButton.className = 'close';
+    closeButton.textContent = '×';
 
-//     clientList.appendChild(clientCard);
-// }
+    // Adicionar evento ao botão de fechar o modal
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
-// // Funções para manipular o modal
-// function openModal(clientData) {
-//     const modal = document.getElementById('modal');
-//     const modalContent = modal.querySelector('.modal-content');
+    // Anexar elementos ao modal
+    modal.appendChild(closeButton);
+    modal.appendChild(h1);
+    modal.appendChild(p);
 
-//     modalContent.innerHTML = `
-//         <span class="close" onclick="closeModal()">&times;</span>
-//         <h2>Detalhes do Cliente</h2>
-//         <p>Nome: ${clientData.tutor.nome}</p>
-//         <p>Animal: ${clientData.animal.nome}</p>
-//         <p>Data do Atendimento: ${clientData.tutor.dataAtendimento}</p>
-//     `;
+    // Anexar o modal ao corpo do documento
+    document.body.appendChild(modal);
 
-//     modal.style.display = 'block';
-// }
+    // Exibir o modal
+    modal.style.display = 'block';
+  })
 
-// function closeModal() {
-//     const modal = document.getElementById('modal');
-//     modal.style.display = 'none';
-// }
-
-const cardContainer = document.getElementById('cardContainer');
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modalContent');
-
-const dadosArmazenados = localStorage.getItem("dadosCliente");
-const dadosUsuarios = JSON.parse(dadosArmazenados);
-
-function criarCard(dadosArmazenados) {
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.textContent = `${dadosArmazenados.nomePet} - ${dadosArmazenados.dataAtendimento}`;  
-
-    card.addEventListener('click', () => {
-        abrirModal(dadosArmazenados);
-      }); 
-
-      return card;
+  return clientCard;
 }
 
-function abrirModal(dadosArmazenados) {
-    modalContent.textContent = `${dadosArmazenados.nomePet} - ${dadosArmazenados.dataAtendimento}`; 
-    modal.style.display = 'block';
-  }
-  
-  // Função para fechar o modal
-  function fecharModal() {
-    modal.style.display = 'none';
-  }
-  
-  // Criar e adicionar os cards
-  clientesCadastrados.forEach(dadosArmazenados => {
-    const card = criarCard(dadosArmazenados);
-    cardContainer.appendChild(card);
+function renderClientList(items) {
+  const clientList = document.createElement('div');
+  clientList.className = 'client-list';
+
+  items.forEach((item, index) => {
+      const clientCard = createClientCard(item, index);
+      console.log(item);
+      clientList.appendChild(clientCard);
   });
-  
-  // Fechar o modal quando clicar fora dele
-  modal.addEventListener('click', fecharModal);
+
+  return clientList;
+}
+
+const items = localStorage.getItem('dadosCliente');
+
+
+
+const clientListContainer = document.getElementById('clientListContainer');
+const renderedClientList = renderClientList(JSON.parse(items));
+clientListContainer.appendChild(renderedClientList);
