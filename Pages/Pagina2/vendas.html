@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>E-commerce de Produtos para Animais</title>
+</head>
+<body>
+    <header class="cabecalho" style="background-color: #281c3c;">
+        <a href="../PaginaHome/home.html">
+            <img src="../images/3035pet.png" class="logo">
+        </a>
+        <h1>Nossa Loja</h1>
+    </header>
+    <h1>Produtos para Animais</h1>
+
+    <div class="product-container">
+        <div class="product-card" onclick="addToCart(document.getElementById('product1-name').textContent,document.getElementsByClassName('product1-price').textContent)">
+            <img src="../images/download.jpeg" alt="Ração Golden">
+            <h3 id="product1-name">Ração Golden</h3>
+            <p id="product1-price" class="product-price">R$ 150.00</p>
+            <p class="product-description">Ração de alta qualidade para cães.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card" onclick="addToCart(document.getElementById('product2-name').textContent,document.getElementsByClassName('product2-price').textContent)">
+            <img src="../images/images (1).jpeg" alt="Ração Premium">
+            <h3 id="product2-name">Ração Premium</h3>
+            <p id="product2-price" class="product-price">R$ 130.00</p>
+            <p class="product-description">Ração de alta qualidade para cães</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card" onclick="addToCart(document.getElementById('product3-name').textContent,document.getElementsByClassName('product3-price').textContent)">
+            <img src="../images/images (2).jpeg" alt="Ração Premium">
+            <h3 id="product3-name">Ração Dog Chow</h3>
+            <p id="product3-price" class="product-price">R$ 140.00</p>
+            <p class="product-description">Ração de alta qualidade para cães</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card" onclick="addToCart(document.getElementById('product4-name').textContent,document.getElementsByClassName('product4-price').textContent)">
+            <img src="../images/download (1).jpeg" alt="Ração Premium">
+            <h3 id="product4-name">Ração Premium</h3>
+            <p id="product4-price" class="product-price">R$ 100.00</p>
+            <p class="product-description">Ração de alta qualidade para cães e gatos.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product-card" onclick="addToCart(document.getElementById('product5-name').textContent,document.getElementsByClassName('product5-price').textContent)">
+            <img src="../images/images.jpeg" alt="Ração Premium">
+            <h3 id="product5-name">Ração Premium</h3>
+            <p id="product5-price" class="product-price">R$ 110.00</p>
+            <p class="product-description">Ração de alta qualidade para cães e gatos.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+       <div class="product-card" onclick="addToCart(document.getElementById('product6-name').textContent,document.getElementsByClassName('product6-price').textContent)">
+            <img src="../images/brinquedo.jpeg" alt="Brinquedo Interativo">
+            <h3 id="product6-name">Brinquedo Interativo</h3>
+            <p  id="product6-price"class="product-price">R$ 20.00</p>
+            <p class="product-description">Brinquedo divertido para entreter seu animal de estimação.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+       <div class="product-card" onclick="addToCart(document.getElementById('product7-name').textContent,document.getElementsByClassName('product7-price').textContent)">
+            <img src="../images/brinquedo1.jpeg" alt="Brinquedo Interativo">
+            <h3 id="product7-name">Brinquedo Interativo</h3>
+            <p id="product7-price" class="product-price">R$ 20.00</p>
+            <p class="product-description">Brinquedo divertido para entreter seu animal de estimação.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+       <div class="product-card" onclick="addToCart(document.getElementById('product8-name').textContent,document.getElementsByClassName('product-price8').textContent)">
+            <img src="../images//brinquedo2.jpeg" alt="Brinquedo Interativo">
+            <h3 id="product8-name">Brinquedo Interativo</h3>
+            <p id="product8-price" class="product-price">R$ 20.00</p>
+            <p class="product-description">Brinquedo divertido para entreter seu animal de estimação.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+       <div class="product-card" onclick="addToCart(document.getElementById('product9-name').textContent,document.getElementsByClassName('product9-price').textContent)">
+            <img src="../images/brinquedo3.jpeg" alt="Brinquedo Interativo">
+            <h3 id="product9-name">Brinquedo Interativo</h3>
+            <p  id="product9-price" class="product-price">R$ 20.00</p>
+            <p class="product-description">Brinquedo divertido para entreter seu animal de estimação.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+       <div class="product-card" onclick="addToCart(document.getElementById('product10-name').textContent,document.getElementsByClassName('product10-price').textContent)">
+            <img src="../images/brinquedo4.jpeg" alt="Brinquedo Interativo">
+            <h3 id="product10-name">Brinquedo Interativo</h3>
+            <p id = "product10-price" class="product-price">R$ 20.00</p>
+            <p class="product-description">Brinquedo divertido para entreter seu animal de estimação.</p>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+        </div>
+
+    </div>
+    <div id="cart-message" class="cart-message"></div>
+
+    <div class="notification" id="cart-notification">
+        <span class="message">Produto foi adicionado ao carrinho!</span>
+    </div>
+    
+
+   
+
+    <script src="logica.js"></script>
+</body>
+</html>

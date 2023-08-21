@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>3035Pet</title>
+</head>
+<body>
+    <header class="cabecalho" style="background-color: #281c3c;">
+        <img src="../images/3035pet.png" class="logo">
+        <nav class="navbar"> 
+            <ul class="nav-list">
+                <a href="#sobrenos"><li>Sobre nós</li></a>
+                <a href="/Pages/Pagina1/paginaClientes.html"><li>Nossos clientes</li></a>
+                <a href="/Pages/Pagina2/vendas.html"><li>Compre conosco</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1 id="name">3035Pet</h1>
+
+            <div class="slideshow-container fade">
+                <div class="Containers">
+                    <div class="MessageInfo">1 / 3</div>
+                    <img src="../images/Fachadas-de-pet-shop-750x410.png" style="width:1000px">
+                    <div class="Info">First caption</div>
+                </div>
+      
+                <div class="Containers">
+                    <div class="MessageInfo">2 / 3</div>
+                    <img src="../images/img-contabilidade-para-pet-shop.jpg" style="width:1000px">
+                    <div class="Info">Second Caption</div>
+                </div>
+      
+                <div class="Containers">
+                    <div class="MessageInfo">3 / 4</div>
+                    <img src="../images/istockphoto-612739772-612x612.jpg" style="width:100%">
+                    <div class="Info">Third Caption</div>
+                </div>
+
+                <div class="Containers">
+                    <div class="MessageInfo">4/ 4</div>
+                    <img src="../images/pet-shop-em-portugal.jpg" style="width:100%">
+                    <div class="Info">Img3</div>
+                </div>
+            
+                <!-- Back and forward buttons -->
+                <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <!-- The circles/dots -->
+            <div style="text-align:center">
+                <span class="dots" onclick="currentSlide(1)"></span>
+                <span class="dots" onclick="currentSlide(2)"></span>
+                <span class="dots" onclick="currentSlide(3)"></span>
+                <span class="dots" onclick="currentSlide(4)"></span>
+            </div> 
+
+            <script src="logica.js"></script>
+        </section>
+
+        <section id="sobrenos">
+            
+            <div id="descricao">
+                <h2>Bem-vindo ao PetShop 3035Pet!</h2>
+                
+                <h3 style="display: flex; align-items: center; justify-content: center;">Descrição:</h3>
+                <p> 
+                    No PetShop 3035Pet, estamos comprometidos em cuidar do seu companheiro peludo com amor, <br/> 
+                    dedicação e profissionalismo. Somos mais do que apenas um pet shop, somos um espaço onde os animais de estimação são tratados como parte da nossa família. <br/>
+                    Nosso objetivo é proporcionar uma experiência completa para os proprietários e seus queridos animais.
+                </p>
+                
+                <!-- <h3>Nossos Serviços:</h3>
+                
+                <h5>Grooming Especializado:</h5> 
+                <p>
+                    Nossos experientes groomers sabem como cuidar da higiene e aparência do seu animal de estimação, 
+                    deixando-os limpos, cheirosos e com o pelo bem cuidado. Oferecemos serviços de banho, tosa, escovação e tratamentos específicos para cada tipo de pelagem.
+                </p>
+
+                <h5>Boutique de Produtos:</h5>
+                <p> 
+                    Em nossa boutique, você encontrará uma variedade de produtos de alta qualidade para atender às necessidades do seu pet. 
+                    Desde alimentos nutritivos e brinquedos divertidos até acessórios elegantes, estamos comprometidos em oferecer apenas o melhor para o seu companheiro.
+                </p>
+
+                <h5>Consultas Veterinárias:</h5>
+                <p>
+                    Contamos com veterinários capacitados que oferecem cuidados de saúde abrangentes para o seu animal de estimação. 
+                    De exames de rotina a tratamentos médicos, estamos aqui para garantir que seu pet esteja sempre saudável e feliz.
+                </p>
+
+                <h5>Hospedagem Confortável:</h5>
+                <p>
+                    Se você precisar viajar ou apenas desejar que seu pet tenha um lugar seguro para ficar, nossa hospedagem é o lugar ideal. 
+                    Oferecemos acomodações confortáveis e supervisionadas, garantindo que seu amigo de quatro patas esteja bem cuidado enquanto você estiver ausente.
+                </p>
+
+                <h5>Serviços de Entrega:</h5>
+                <p>
+                     Para sua conveniência, oferecemos serviços de entrega de produtos diretamente à sua porta, garantindo que seu animal de estimação
+                     nunca fique sem seus itens essenciais.
+                </p> -->
+                   
+                <h3>Nossa Missão:</h3>
+                <p>
+                    Nossa missão no PetShop 3035Pet é ser um refúgio para os amantes de animais, 
+                    proporcionando um ambiente onde a paixão pelos pets se encontra com serviços excepcionais. 
+                    Queremos criar laços duradouros com nossos clientes peludos e humanos, oferecendo cuidados que excedam as expectativas.
+                    No PetShop 3035Pet, seu animal de estimação será tratado com o carinho e respeito que merece. 
+                    Venha nos visitar e faça parte da nossa família pet!
+                </p>
+            </div>
+        </section>
+        <section class="formularios">
+            <div class="container">
+                <h2>Dados do Tutor</h2>
+                <form id="meuForm">
+                  <label for="nome">Nome do tutor</label>
+                  <input type="text" id="nome" name="nome" required>
+            
+                  <label for="telefone">Telefone</label>
+                  <input type="tel" id="telefone" name="telefone" required>
+            
+                  <label for="endereco">Endereço</label>
+                  <input type="text" id="endereco" name="endereco" required>
+            
+                  <label for="data">Data do atendimento</label>
+                  <input type="date" name="data" id="data">
+                    
+                  <h2>Dados do seu pet</h2>
+                  <label for="nomePet">Nome do pet</label>
+                  <input type="text" id="nomePet" name="nomePet" required>
+
+                  <label for="idade">Idade</label>
+                  <input type="text" id="idade" name="idade" required>
+            
+                  <label for="porte">Porte</label>
+                  <input type="text" id="porte" name="porte" required>
+
+                  <button type="button" id="salvarDados">Enviar</button>
+                
+                </form>
+        
+              <script src="./logica.js"></script>
+        </section>
+    </main>
+    <footer class="rodape">
+        <a href="https://github.com/rodrigomiyabe">
+            <img id="imgGit" src="../images/github.png">
+        </a>
+            <h6>© 2023 Todos direitos reservados</h6>
+                     
+    </footer>
+</body>
+</html>
